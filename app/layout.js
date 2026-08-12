@@ -1,0 +1,3 @@
+import "./globals.css";
+export const metadata={metadataBase:new URL("https://proroofsolutionsmd.com"),title:"Pro Roof Solutions | Maryland Roofing & Exterior Contractor",description:"Pro Roof Solutions provides Maryland homeowners and businesses with roof replacement, storm damage restoration assistance, siding replacement, gutter systems, and complete exterior solutions.",keywords:["Maryland roofing contractor","roof replacement Maryland","storm damage roof inspection Maryland","siding replacement Maryland","gutter installation Maryland","Pro Roof Solutions"],alternates:{canonical:"https://proroofsolutionsmd.com"}};
+export default function RootLayout({children}){return <html lang="en"><body>{children}</body></html>}
