@@ -1,0 +1,1 @@
+const fs=require('fs');const path=require('path');const dir=path.join(process.cwd(),'public','projects');for(const f of fs.readdirSync(dir)){if(f.endsWith('.webp.b64')){const src=path.join(dir,f);const out=src.slice(0,-4);fs.writeFileSync(out,Buffer.from(fs.readFileSync(src,'utf8').trim(),'base64'));}}
