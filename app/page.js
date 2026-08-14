@@ -1,5 +1,265 @@
 "use client";
-import{useState}from"react";
-const services=[["Roof Replacement","Residential and commercial roof replacement using manufacturer-backed roofing systems and workmanship built for long-term protection."],["Storm Damage Restoration Assistance","Detailed roof and exterior inspections for hail and wind damage, photo documentation, scope review, and contractor support throughout the restoration process."],["Siding Replacement","Full siding replacement to improve curb appeal, weather resistance, and property protection."],["Gutter Systems","Professional gutter and downspout systems for dependable drainage and exterior protection."]];
-const trust=["Licensed and Insured","Free inspection of the property's roof system and exterior elevations","Storm Restoration Assistance","Manufacturer-backed systems","10-year workmanship warranty","Flexible financing available","Referral rewards program"];
-export default function Home(){const[f,setF]=useState({name:"",phone:"",email:"",message:"",service:"Free Quote"});function submit(e){e.preventDefault();location.href=`mailto:nick@proroofsolutions.net?subject=${encodeURIComponent(`New Website Lead - ${f.service}`)}&body=${encodeURIComponent(`Name: ${f.name}\nPhone: ${f.phone}\nEmail: ${f.email}\nRequest: ${f.service}\n\n${f.message}`)}`};return <main className="min-h-screen bg-white text-zinc-950"><div className="bg-zinc-950 px-5 py-2 text-center text-xs font-bold uppercase tracking-widest text-white">MHIC #145241 • Licensed & Insured • Serving Maryland</div><header className="sticky top-0 z-50 border-b bg-white/95"><div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4"><div><div className="text-xl font-black">PRO ROOF <span className="text-red-700">SOLUTIONS</span></div><div className="text-xs uppercase tracking-widest text-zinc-500">Roofing • Storm Damage • Exteriors</div></div><div className="flex gap-2"><a href="sms:+14435042424" className="rounded-xl border px-4 py-3 text-sm font-black">TEXT</a><a href="tel:+14435042424" className="rounded-xl bg-red-700 px-4 py-3 text-sm font-black text-white">CALL (443) 504-2424</a></div></div></header><section className="bg-zinc-950 text-white"><div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 lg:grid-cols-2"><div><p className="text-sm font-black uppercase tracking-widest text-red-500">Maryland Roofing & Exterior Contractor</p><h1 className="mt-5 text-4xl font-black leading-tight md:text-6xl">Roofing and exterior work built on trust, reliability, and lasting protection.</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">Pro Roof Solutions provides Maryland homeowners and businesses with expert roof replacement, storm damage restoration assistance, siding replacement, gutter systems, and complete exterior solutions.</p><div className="mt-8 flex flex-wrap gap-3"><a href="#contact" className="rounded-xl bg-red-700 px-6 py-4 font-black">FREE QUOTE / STORM DAMAGE INSPECTION</a><span className="rounded-xl border border-white/20 px-5 py-4"><span className="text-yellow-400">★★★★★</span> 5-Star Service</span></div></div><form id="contact" onSubmit={submit} className="rounded-3xl bg-white p-7 text-zinc-950"><h2 className="text-2xl font-black">Free Quote / Storm Damage Inspection</h2><div className="mt-5 space-y-3"><select value={f.service} onChange={e=>setF({...f,service:e.target.value})} className="w-full rounded-xl border p-3"><option>Free Quote</option><option>Storm Damage Inspection</option><option>Roof Replacement</option><option>Siding Replacement</option><option>Gutter Systems</option></select><input required placeholder="Name" value={f.name} onChange={e=>setF({...f,name:e.target.value})} className="w-full rounded-xl border p-3"/><input required placeholder="Phone" value={f.phone} onChange={e=>setF({...f,phone:e.target.value})} className="w-full rounded-xl border p-3"/><input type="email" placeholder="Email" value={f.email} onChange={e=>setF({...f,email:e.target.value})} className="w-full rounded-xl border p-3"/><textarea rows="4" placeholder="Tell us about your project" value={f.message} onChange={e=>setF({...f,message:e.target.value})} className="w-full rounded-xl border p-3"/><button className="w-full rounded-xl bg-zinc-950 p-4 font-black text-white">REQUEST FREE INSPECTION</button></div></form></div></section><section className="mx-auto grid max-w-7xl gap-4 px-6 py-10 sm:grid-cols-2 lg:grid-cols-4">{trust.map(x=><div key={x} className="rounded-xl border bg-zinc-50 p-5 font-bold">{x}</div>)}</section><section className="mx-auto max-w-7xl px-6 py-20"><p className="font-black uppercase tracking-widest text-red-700">Premium Services</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Complete roofing and exterior solutions for Maryland properties.</h2><div className="mt-10 grid gap-6 md:grid-cols-2">{services.map(([t,d])=><article key={t} className="rounded-3xl border p-7 shadow-sm"><div className="h-1.5 w-16 bg-red-700"/><h3 className="mt-5 text-2xl font-black">{t}</h3><p className="mt-4 leading-7 text-zinc-600">{d}</p></article>)}</div></section><section className="bg-zinc-950 text-white"><div className="mx-auto max-w-7xl px-6 py-20"><p className="font-black uppercase tracking-widest text-red-500">Storm Damage Restoration Assistance</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Hail or wind damage? Start with a detailed inspection.</h2><p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-300">We inspect the roof system and exterior elevations, document visible storm-related damage, provide photographs and measurements, and help homeowners understand the repair or replacement scope.</p></div></section><section id="projects" className="mx-auto max-w-7xl px-6 py-20"><p className="font-black uppercase tracking-widest text-red-700">Completed Projects</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Roofing workmanship across Maryland.</h2><p className="mt-5 max-w-3xl text-lg leading-8 text-zinc-600">A look at completed Pro Roof Solutions roofing projects, from large multi-plane roof systems to residential replacements.</p><div className="mt-10 overflow-hidden rounded-3xl border bg-zinc-950 shadow-xl"><img src="/projects/roof-5.webp" alt="Completed large residential roof replacement by Pro Roof Solutions" className="h-auto w-full object-cover"/><div className="p-6 text-white"><p className="text-xs font-black uppercase tracking-widest text-red-500">Featured Project</p><h3 className="mt-2 text-2xl font-black">Large Residential Roof Replacement</h3><p className="mt-2 text-zinc-300">Complex roof geometry completed with careful detailing and a clean finished appearance.</p></div></div></section><section className="mx-auto max-w-7xl px-6 py-20"><p className="font-black uppercase tracking-widest text-red-700">Why Pro Roof Solutions</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Premium roofing and exterior services you can trust.</h2><div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{["Top-rated Maryland contractor","Trusted by homeowners across Maryland","Proven, warranty-backed workmanship","Premium roofing and exterior systems","Detailed inspections and honest recommendations","Residential and commercial expertise"].map(x=><div key={x} className="rounded-2xl border p-6 font-bold">{x}</div>)}</div></section><section className="bg-zinc-100"><div className="mx-auto grid max-w-7xl gap-6 px-6 py-20 md:grid-cols-3"><div><h3 className="text-2xl font-black">10-Year Workmanship Warranty</h3><p className="mt-3 text-zinc-600">Long-term confidence in your completed project.</p></div><div><h3 className="text-2xl font-black">Flexible Financing</h3><p className="mt-3 text-zinc-600">Ask about financing options for larger improvements.</p></div><div><h3 className="text-2xl font-black">Referral Rewards</h3><p className="mt-3 text-zinc-600">Ask us about rewards for qualified referrals.</p></div></div></section><footer className="bg-black px-6 py-12 text-center text-zinc-400"><p className="text-xl font-black text-white">PRO ROOF <span className="text-red-600">SOLUTIONS</span></p><p className="mt-3">(443) 504-2424 • nick@proroofsolutions.net • MHIC #145241</p><p className="mt-3">© 2026 Pro Roof Solutions. Maryland roofing and exterior services.</p></footer><div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 bg-white p-2 sm:hidden"><a href="tel:+14435042424" className="rounded-l-xl bg-zinc-950 p-3 text-center font-black text-white">CALL</a><a href="sms:+14435042424" className="rounded-r-xl bg-red-700 p-3 text-center font-black text-white">TEXT</a></div></main>}
+
+import { useState } from "react";
+
+const services = [
+  {
+    title: "Roof Replacement",
+    text: "Premium residential and commercial roofing systems installed with craftsmanship, clear communication, and long-term protection in mind.",
+  },
+  {
+    title: "Storm Damage Restoration Assistance",
+    text: "Fast inspections, damage documentation, and insurance-support guidance after hail or wind damage.",
+  },
+  {
+    title: "Siding Replacement & Gutter Systems",
+    text: "Durable siding and high-performance gutter systems designed to improve curb appeal, water control, and long-term exterior protection.",
+  },
+];
+
+const trustItems = [
+  "Licensed and Insured",
+  "Free inspection of the property's roof system and exterior elevations",
+  "Storm Restoration Assistance",
+  "Manufacturer-backed systems",
+  "10-year workmanship warranty",
+  "Flexible financing available",
+  "Referral rewards program",
+];
+
+const reasons = [
+  "Top-rated Maryland contractor",
+  "Trusted by homeowners across Maryland",
+  "Proven, warranty-backed workmanship",
+  "Integrity, credibility, and reliability",
+  "Residential and commercial expertise",
+  "Detailed inspections and honest recommendations",
+];
+
+const reviews = [
+  "Professional, responsive, and easy to work with from inspection through completion.",
+  "They made the storm restoration process clear and handled everything professionally.",
+  "High-quality workmanship and great communication from start to finish.",
+];
+
+export default function Home() {
+  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+
+  function submit(e) {
+    e.preventDefault();
+    const subject = encodeURIComponent("New Pro Roof Solutions Website Lead");
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\n\nProject Details:\n${form.message}`
+    );
+    window.location.href = `mailto:nick@proroofsolutions.net?subject=${subject}&body=${body}`;
+  }
+
+  return (
+    <main className="min-h-screen bg-white text-zinc-950">
+      <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4">
+          <div>
+            <div className="text-lg font-black tracking-tight">
+              PRO ROOF <span className="text-red-700">SOLUTIONS</span>
+            </div>
+            <div className="text-[10px] uppercase tracking-[0.22em] text-zinc-500 sm:text-xs">
+              Roofing • Storm Damage • Exteriors
+            </div>
+          </div>
+
+          <nav className="hidden gap-7 text-sm font-semibold lg:flex">
+            <a href="#services" className="hover:text-red-700">Services</a>
+            <a href="#why" className="hover:text-red-700">Why Us</a>
+            <a href="#reviews" className="hover:text-red-700">Reviews</a>
+            <a href="#contact" className="hover:text-red-700">Contact</a>
+          </nav>
+
+          <a
+            href="tel:+14435042424"
+            className="rounded-xl bg-zinc-950 px-4 py-3 text-xs font-bold text-white transition hover:bg-red-700 sm:text-sm"
+          >
+            Call / Text
+          </a>
+        </div>
+      </header>
+
+      <section className="bg-zinc-950 text-white">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.15fr_.85fr] lg:py-28">
+          <div>
+            <div className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-zinc-300">
+              Maryland Exterior Remodeling & Restoration
+            </div>
+
+            <h1 className="mt-6 max-w-4xl text-4xl font-black leading-tight tracking-tight md:text-6xl">
+              Roofing and exterior work built on trust, reliability, and lasting protection.
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
+              Pro Roof Solutions provides Maryland homeowners and businesses with roof replacement,
+              storm damage restoration assistance, siding replacement, gutter systems, and full exterior improvements.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#contact"
+                className="rounded-xl bg-red-700 px-6 py-4 text-center text-sm font-black uppercase tracking-wide text-white"
+              >
+                Free Quote / Storm Inspection
+              </a>
+              <a
+                href="#services"
+                className="rounded-xl border border-white/20 px-6 py-4 text-center text-sm font-black uppercase tracking-wide"
+              >
+                Explore Services
+              </a>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3 text-sm">
+              <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+                <span className="text-yellow-400">★★★★★</span> 5-Star Reviews
+              </span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Licensed & Insured</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Warranty-Backed Work</span>
+            </div>
+          </div>
+
+          <form onSubmit={submit} className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl">
+            <div className="rounded-[1.5rem] bg-white p-6 text-zinc-950">
+              <div className="text-sm font-black uppercase tracking-[0.22em] text-red-700">
+                Free Quote / Storm Damage Inspection
+              </div>
+              <h2 className="mt-3 text-2xl font-black">Tell us how we can help.</h2>
+
+              <div className="mt-6 space-y-4">
+                <input required placeholder="Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-red-700" />
+                <input required placeholder="Phone" inputMode="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-red-700" />
+                <input placeholder="Email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-red-700" />
+                <textarea placeholder="Tell us about your roof or exterior project" rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-red-700" />
+              </div>
+
+              <button type="submit" className="mt-5 w-full rounded-xl bg-zinc-950 px-5 py-4 text-sm font-black uppercase tracking-wide text-white hover:bg-red-700">
+                Request Free Quote
+              </button>
+
+              <p className="mt-4 text-xs leading-5 text-zinc-500">
+                Free inspections. No pressure. Honest recommendations for Maryland homeowners and businesses.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section className="border-b border-zinc-200">
+        <div className="mx-auto grid max-w-7xl gap-4 px-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
+          {trustItems.map((item) => (
+            <div key={item} className="rounded-xl border border-zinc-200 bg-zinc-50 p-5 text-sm font-bold">
+              {item}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="services" className="mx-auto max-w-7xl px-6 py-20">
+        <p className="text-sm font-black uppercase tracking-[0.22em] text-red-700">Services</p>
+        <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-tight md:text-5xl">
+          Premium exterior services built around your property.
+        </h2>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {services.map((service) => (
+            <article key={service.title} className="rounded-[2rem] border border-zinc-200 p-7 shadow-sm">
+              <div className="h-1.5 w-16 rounded-full bg-red-700" />
+              <h3 className="mt-6 text-2xl font-black">{service.title}</h3>
+              <p className="mt-4 leading-7 text-zinc-600">{service.text}</p>
+              <a href="#contact" className="mt-6 inline-block font-black uppercase tracking-wide hover:text-red-700">
+                Request a quote
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="why" className="border-y border-zinc-200 bg-zinc-50">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-red-700">Why Pro Roof Solutions</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
+              A premium brand delivering premium services you can trust.
+            </h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {reasons.map((reason) => (
+              <div key={reason} className="rounded-2xl border border-zinc-200 bg-white p-6 font-bold shadow-sm">
+                {reason}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className="border-y border-zinc-200 bg-zinc-50"><div className="mx-auto max-w-7xl px-6 py-20"><p className="text-sm font-black uppercase tracking-[0.22em] text-red-700">Completed Projects</p><h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">Completed roofing projects across Maryland.</h2><p className="mt-5 max-w-3xl text-lg leading-8 text-zinc-600">A selection of completed Pro Roof Solutions roof replacements, including larger multi-plane roof systems and residential projects.</p><div className="mt-10 overflow-hidden rounded-[2rem] border border-zinc-200 bg-white shadow-sm"><div className="h-[420px] overflow-hidden md:h-[560px]"><img src="/projects/roof-5.webp" alt="Featured completed Pro Roof Solutions roofing projects" className="h-[200%] w-full object-cover object-top"/></div><div className="p-7"><p className="text-xs font-black uppercase tracking-[0.22em] text-red-700">Featured Roofs</p><h3 className="mt-2 text-2xl font-black">Larger & Complex Roof Systems</h3><p className="mt-3 leading-7 text-zinc-600">Drone views highlighting completed larger residential roofs, complex hips, valleys, ridges, and multi-plane roofing systems.</p></div></div><div className="mt-8"><div className="mb-5"><p className="text-xs font-black uppercase tracking-[0.22em] text-red-700">Photo Gallery</p><h3 className="mt-2 text-2xl font-black">More Completed Roofs</h3></div><div className="h-[420px] overflow-hidden rounded-[2rem] border border-zinc-200 bg-white shadow-sm md:h-[560px]"><img src="/projects/roof-5.webp" alt="Gallery of completed Pro Roof Solutions roof replacements" className="h-[200%] w-full -translate-y-1/2 object-cover object-bottom"/></div></div></div></section>
+
+      <section id="reviews" className="mx-auto max-w-7xl px-6 py-20">
+        <p className="text-sm font-black uppercase tracking-[0.22em] text-red-700">5-Star Reviews</p>
+        <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">Trusted by homeowners across Maryland.</h2>
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {reviews.map((review) => (
+            <article key={review} className="rounded-[2rem] border border-zinc-200 p-7 shadow-sm">
+              <div className="text-xl text-yellow-400">★★★★★</div>
+              <p className="mt-4 leading-7 text-zinc-600">{review}</p>
+              <p className="mt-6 text-sm font-black uppercase tracking-wide">Customer Review</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="process" className="border-y border-zinc-200 bg-zinc-50">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <p className="text-sm font-black uppercase tracking-[0.22em] text-red-700">Simple Process</p>
+          <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">A clear path from inspection to completion.</h2>
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {[
+              ["01", "Schedule a Free Inspection", "Book a no-pressure inspection and get a clear assessment of your roof or exterior."],
+              ["02", "Review Your Options", "We explain materials, scope, warranties, financing, and storm-restoration options."],
+              ["03", "Get the Job Done Right", "Our team completes the project with quality workmanship, communication, and clean final results."],
+            ].map(([num, title, text]) => (
+              <article key={num} className="rounded-[2rem] border border-zinc-200 bg-white p-7 shadow-sm">
+                <p className="text-sm font-black tracking-[0.22em] text-red-700">{num}</p>
+                <h3 className="mt-4 text-2xl font-black">{title}</h3>
+                <p className="mt-4 leading-7 text-zinc-600">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-zinc-950 text-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-red-500">Contact</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
+              Ready for a free quote or storm damage inspection?
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-zinc-300">
+              Get honest recommendations and responsive support for roofing, storm restoration, siding, gutters, and complete exterior improvements.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
+            <p className="text-xs uppercase tracking-[0.22em] text-zinc-400">Call or Text</p>
+            <a href="tel:+14435042424" className="mt-2 block text-3xl font-black hover:text-red-500">(443) 504-2424</a>
+
+            <p className="mt-8 text-xs uppercase tracking-[0.22em] text-zinc-400">Email</p>
+            <a href="mailto:nick@proroofsolutions.net" className="mt-2 block text-xl font-bold hover:text-red-500">
+              nick@proroofsolutions.net
+            </a>
+
+            <a href="sms:+14435042424" className="mt-8 inline-flex w-full justify-center rounded-xl bg-red-700 px-6 py-4 text-sm font-black uppercase tracking-wide">
+              Text Pro Roof Solutions
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
